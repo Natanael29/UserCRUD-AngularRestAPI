@@ -1,0 +1,33 @@
+<div class="container p-5">
+    <!-- *ngFor="let user of users" -->
+    <div class="mb-2">
+        <button type="button" routerLink="/create" class="btn btn-dark">Create User <i class="uil uil-plus-circle"></i></button>
+    </div>
+    <table class="table table-striped users-table">
+        <thead>
+          <tr class="bg-dark text-light text-center">
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">University</th>
+            <th scope="col">Actions</th>
+            <!-- <th scope="col">Last</th>
+            <th scope="col">Handle</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" class="text-center">
+            <td>{{user.name}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.university}}</td>
+            <td>
+                <button type="button" routerLink="/update/{{user.id}}" class="btn btn-warning mr-2"><i class="uil uil-edit h5"></i></button>
+                <button type="button" class="btn btn-danger" (click)="deleteUser(user.id)"><i class="uil uil-trash-alt h5"></i></button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

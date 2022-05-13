@@ -1,0 +1,55 @@
+<div class="d-flex p-5 justify-content-center">
+    <div *ngIf="user" class="border rounded p-4 bg-dark text-light" style="min-width: 400px;">
+        <div class="mb-3">
+          <label for="user-name" class="form-label">Name: </label>
+          <input type="text" id="user-name" [(ngModel)]="user.name" class="form-control" #name required>
+        </div>
+        <div class="mb-3">
+            <label for="user-surname" class="form-label">Surname: </label>
+            <input type="text" id="user-surname" [(ngModel)]="user.surname" class="form-control" #surname required>
+          </div>
+          <div class="mb-3">
+            <label for="user-age" class="form-label">Age: </label>
+            <input type="number" id="user-age" [(ngModel)]="user.age" class="form-control" placeholder="Age" #age required>
+          </div>
+          <div class="mb-3">
+            <label for="user-email" class="form-label">Email: </label>
+            <input type="text" id="user-email" [(ngModel)]="user.email" class="form-control" placeholder="Email" #email required>
+          </div>
+          <div class="mb-3">
+            <label for="user-university" class="form-label">University: </label>
+            <input type="text" id="user-university" [(ngModel)]="user.university" class="form-control" placeholder="University" #university required>
+          </div>
+        <div class="mb-3">
+            <button type="button" class="btn btn-success mr-2" (click)="updateUser()">Update</button>
+            <button type="button" class="btn btn-danger" (click)="goBack()">Back</button>
+        </div>
+    </div>
+    <div *ngIf="!user" class="border rounded p-4 bg-dark text-light" style="min-width: 400px;">
+        <div class="mb-3">
+          <label for="user-name" class="form-label">Name: </label>
+          <input type="text" id="user-name" class="form-control" placeholder="Name" #name required>
+        </div>
+        <div class="mb-3">
+            <label for="user-surname" class="form-label">Surname: </label>
+            <input type="text" id="user-surname" class="form-control" placeholder="Surname" #surname required>
+          </div>
+          <div class="mb-3">
+            <label for="user-age" class="form-label">Age: </label>
+            <input type="number" id="user-age" class="form-control" placeholder="Age" #age required>
+          </div>
+          <div class="mb-3">
+            <label for="user-email" class="form-label">Email: </label>
+            <input type="text" id="user-email" class="form-control" placeholder="Email" #email required>
+          </div>
+          <div class="mb-3">
+            <label for="user-university" class="form-label">University: </label>
+            <input type="text" id="user-university" class="form-control" placeholder="University" #university required>
+          </div>
+        <div class="mb-3">
+            <button type="button" class="btn btn-success mr-2" (click)="save(name.value, surname.value, age.value, email.value, university.value)">Save</button>
+            <button type="button" class="btn btn-danger" (click)="goBack()">Back</button>
+        </div>
+    </div>
+    
+</div>
